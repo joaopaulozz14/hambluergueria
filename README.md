@@ -22,16 +22,24 @@
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
+## API Hambluergueria
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
+## Como clonar o repositório
+```bash
+git clone https://github.com/joaopaulozz14/hambluergueria.git
+```
 ## Installation
 
 ```bash
 $ npm install
 ```
-
+## Extensões
+```bash
+Nome: EditorConfig for VS Code
+Link do Marketplace do VS: https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig
+```
 ## Running the app
 
 ```bash
@@ -40,22 +48,6 @@ $ npm run start
 
 # watch mode
 $ npm run start:dev
-
-# production mode
-$ npm run start:prod
-```
-
-## Test
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
 ```
 
 ## Support
