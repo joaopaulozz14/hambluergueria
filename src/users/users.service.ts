@@ -3,6 +3,7 @@ import { User } from './entities/users.entities';
 import { PrismaService } from 'src/prisma/service.prisma';
 import { CreateUserDto } from './dto/create-user.dto';
 import * as bcrypt from 'bcryptjs';
+import { UpdateUserDto } from './dto/update-user.dto';
 @Injectable()
 export class UsersService {
   constructor(private readonly prisma: PrismaService) {}
@@ -23,5 +24,13 @@ export class UsersService {
       password: hashedPassword,
     };
     return this.prisma.user.create({ data });
+  }
+
+  async delete(id: string) {
+    await this.prisma.user.delete({ where: { id } });
+  }
+
+  update(id: string, dto: UpdateUserDto) {
+    return this.prisma.user.update({ where: { id }, data: dto });
   }
 }
