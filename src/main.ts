@@ -10,9 +10,10 @@ async function bootstrap(): Promise<void> {
     .setTitle('Hambluergueria')
     .setDescription('Api de hamburgueria da BlueEdtech')
     .setVersion('1.0.0')
+    .addTag('users')
+    .addTag('products')
     .addTag('status')
     .build();
-
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('/docs', app, document);
   await app.listen(3333);
