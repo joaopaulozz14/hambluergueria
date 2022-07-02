@@ -1,7 +1,8 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post } from '@nestjs/common';
 import { UsersService } from './users.service';
 import { CreateUserDto } from './dto/create-user.dto';
-import { ApiTags } from '@nestjs/swagger';
+import { ApiOperation, ApiTags } from '@nestjs/swagger';
+import { User } from './entities/users.entities';
 
 @ApiTags('users')
 @Controller('/users')
@@ -11,12 +12,26 @@ export class UsersController {
   constructor(private readonly usersService: UsersService) {}
 
   @Get()
-  getAll() {
+  @ApiOperation({
+    summary: 'Lista todos os usuários',
+  })
+  getAll(): Promise<User[]> {
     return this.usersService.getAll();
   }
 
+  @Get(':id')
+  @ApiOperation({
+    summary: 'Lista usuário por Id',
+  })
+  getById(@Param('id') id: string): Promise<User> {
+    return this.usersService.getById(id);
+  }
+
   @Post()
-  create(@Body() createUserDto: CreateUserDto) {
-    return this.usersService.create(createUserDto);
+  @ApiOperation({
+    summary: 'Cria um novo usuário',
+  })
+  create(@Body() dto: CreateUserDto): Promise<User> {
+    return this.usersService.create(dto);
   }
 }
