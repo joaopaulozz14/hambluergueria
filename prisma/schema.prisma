@@ -29,6 +29,25 @@ model Product {
   image       String
   createdAt   DateTime @default(now()) @map("created_at")
   updatedAt   DateTime @updatedAt @map("updated_at")
+  category    Category @relation(fields: [categoryId], references: [id])
+  categoryId  String
 
   @@map("product")
+}
+
+model Table {
+  id        String   @id @default(uuid())
+  number    Float    @unique
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("table")
+}
+
+model Category {
+  id       String    @id @default(uuid())
+  name     String    @unique
+  products Product[]
+
+  @@map("category")
 }

@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsNotEmpty, IsNumber, IsString, IsUrl } from 'class-validator';
+import { IsNotEmpty, IsNumber, IsString, IsUrl, IsUUID } from 'class-validator';
 
 export class CreateProductDto {
   @IsString()
@@ -30,4 +30,11 @@ export class CreateProductDto {
     example: 'https://localohost:2222',
   })
   image: string;
+
+  @IsUUID()
+  @ApiProperty({
+    description: 'Id da categoria do produto',
+    example: '08cf6bcd-9ce2-4d7b-8982-3b5b3fe601d5',
+  })
+  categoryId: string;
 }

@@ -38,7 +38,7 @@ export class ProductsController {
   @ApiOperation({
     summary: 'Listagem de um produto',
   })
-  findOne(@Param('id') id: string){
+  findOne(@Param('id') id: string) {
     return this.productsService.findOne(id);
   }
 

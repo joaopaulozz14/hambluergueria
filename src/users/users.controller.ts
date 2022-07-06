@@ -27,22 +27,22 @@ export class UsersController {
     summary: 'Lista todos os usuários',
   })
   getAll(): Promise<User[]> {
-    return this.usersService.getAll();
+    return this.usersService.findAll();
   }
 
   @Get(':id')
   @ApiOperation({
     summary: 'Lista usuário por Id',
   })
-  getById(@Param('id') id: string): Promise<User> {
-    return this.usersService.getById(id);
+  findOne(@Param('id') id: string): Promise<User> {
+    return this.usersService.findOne(id);
   }
 
   @Post()
   @ApiOperation({
     summary: 'Cria um novo usuário',
   })
-  create(@Body() dto: CreateUserDto): Promise<User> {
+  create(@Body() dto: CreateUserDto): Promise<User | void> {
     return this.usersService.create(dto);
   }
 
@@ -52,14 +52,17 @@ export class UsersController {
     summary: 'Delete um usuário',
   })
   delete(@Param('id') id: string) {
-    this.usersService.delete(id);
+    this.usersService.remove(id);
   }
 
   @Patch(':id')
   @ApiOperation({
     summary: 'atualizar um usuário',
   })
-  update(@Param('id') id: string, @Body() dto: UpdateUserDto): Promise<User> {
+  update(
+    @Param('id') id: string,
+    @Body() dto: UpdateUserDto,
+  ): Promise<User | void> {
     return this.usersService.update(id, dto);
   }
 }
