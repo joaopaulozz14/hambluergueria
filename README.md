@@ -74,8 +74,12 @@ DATABASE_URL="postgresql://postgres:admin@localhost:5432/hamburgueria"
 
 ## Funcionalidades
 
-Para acessar a lista de endpoints e funcionalidades da aplicação, acesse nossa documentação do <a href="">Swagger</a>, lá você poderá testar todas as rotas.
+Para acessar a lista de endpoints e funcionalidades da aplicação, acesse nossa documentação do <a href="https://hambluergueria-production.up.railway.app/docs/">Swagger</a>, lá você poderá testar todas as rotas.
 
+## Autores
+
+- João Paulo Da Costa Machado
+- Turma C013 - Blue Edtech
 ## Extensões
 
 ```bash
