@@ -2,18 +2,18 @@ import { ApiProperty } from '@nestjs/swagger';
 import { IsNotEmpty, IsString, IsUUID } from 'class-validator';
 
 export class FavoriteProductDto {
-  @IsString()
-  @IsNotEmpty()
-  @ApiProperty({
-    description: 'Nome do produto que está sendo favoritado pelo usuário',
-    example: 'X-Salada',
-  })
-  productName: string;
-
   @IsUUID()
   @ApiProperty({
     description: 'Id do usuário que está favoritando o produto',
-    example: '78d2497e-38e4-43c8-b724-c6a99397269d',
+    example: '07a0149d-60fa-41f5-9864-b090e6ec8ad1',
   })
   userId: string;
+
+  @IsString()
+  @IsNotEmpty()
+  @ApiProperty({
+    description: 'Nome do produto que está favoritando o produto',
+    example: 'Hamburguer Salada',
+  })
+  productName: string;
 }

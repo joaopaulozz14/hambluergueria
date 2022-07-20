@@ -7,10 +7,11 @@ import { CategoriesModule } from './categories/categories.module';
 import { TablesModule } from './tables/tables.module';
 import { OrdersModule } from './orders/orders.module';
 import { AuthModule } from './auth/auth.module';
+import { FavoritesModule } from './favorites/favorites.module';
 //Importa o Module do nest
 //O module é a central para relacionar o controller, o service;
 @Module({
-  imports: [UsersModule, ProductsModule, CategoriesModule, TablesModule, OrdersModule, AuthModule],
+  imports: [UsersModule, ProductsModule, CategoriesModule, TablesModule, OrdersModule, AuthModule, FavoritesModule],
   controllers: [AppController],
   providers: [AppService],
 })
