@@ -24,23 +24,39 @@
 
 ## API Hambluergueria
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Projeto Desenvolvido em conjunto com a turma C013 da Blue EdTech. Desenvolvemos ele com o intuito de aprender os conceitos para trabalhar com Nest.js + Prisma.
+Trabalhamos também com conceitos de autenticação, filtragem de buscas, documentação de projetos e bancos de dados relacionais.
 
-## Como clonar o repositório
+## Pré-requisitos
+
+- Node com versão superior ou igual ao 16.15.0 - <a href="https://nodejs.org/pt-br/download/" target="_blank">Node Download</a>
+- NPM com versão superior ou igual ao 8.5.5 - <a href="https://www.npmjs.com/package/download" target="_blank">Npm Download</a>
+- Nest.js com versão superior ou igual ao 8.5.5 - <a href="https://docs.nestjs.com/" target="_blank">Nest Download</a>
+- PostgresSQL com versão superior ou igual ao 8.2.6 - <a href="https://www.postgresql.org/download/" target="_blank">PostgresSQL Download</a>
+
+## Instalação
+
+Clone esse projeto em seu computador com o comando (Chave SSH necessária):
+
 ```bash
-git clone https://github.com/joaopaulozz14/hambluergueria.git
+$ git clone https://github.com/joaopaulozz14/hambluergueria.git
 ```
-## Installation
+
+Acesse a pasta do projeto
+
+```bash
+$ cd hamburgueria
+```
+
+Instale as dependências com o seguinte comando
 
 ```bash
 $ npm install
 ```
-## Extensões
-```bash
-Nome: EditorConfig for VS Code
-Link do Marketplace do VS: https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig
-```
-## Running the app
+
+## Execução
+
+Após ter instalado as dependências, use o seguinte comando para rodar o projeto em um servidor local:
 
 ```bash
 # development
@@ -48,6 +64,23 @@ $ npm run start
 
 # watch mode
 $ npm run start:dev
+```
+
+Para conseguir trabalhar com o banco de dados você deverá criar um arquivo .env e adicionar uma url de conexão com seu Postgres local com a chave DATABASE_URL.
+
+```bash
+DATABASE_URL="postgresql://postgres:admin@localhost:5432/hamburgueria"
+```
+
+## Funcionalidades
+
+Para acessar a lista de endpoints e funcionalidades da aplicação, acesse nossa documentação do <a href="">Swagger</a>, lá você poderá testar todas as rotas.
+
+## Extensões
+
+```bash
+Nome: EditorConfig for VS Code
+Link do Marketplace do VS: https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig
 ```
 
 ## Support
